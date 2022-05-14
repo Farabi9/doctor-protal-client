@@ -10,14 +10,14 @@ const MakeAppoinment = () => {
             <div className='flex-1 hidden lg:block'>
                 <img className='mt-[-150px]' src={doctor} alt="" />
             </div>
-            <div className='flex-1'>
+            <div className='flex-1 px-5'>
                   <h3 className='text-xl text-primary font-bold'>
                       Appoinment
                   </h3>
-                  <h2 className='text-3xl text-white'>
+                  <h2 className='text-3xl text-white py-5'>
                       Make an Appinment Today
                   </h2>
-                  <p className='text-white'>
+                  <p className='text-white pb-5'>
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus accusantium tenetur ullam blanditiis sit quam quasi tempora! Aliquam incidunt accusamus, eaque dolor aspernatur illum hic, reprehenderit optio assumenda ullam ipsa aperiam pariatur tempore, temporibus sapiente laborum quo rem consequuntur eveniet.
                   </p>
                   <PrimaryButton>Get started</PrimaryButton>
