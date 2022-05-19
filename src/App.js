@@ -6,11 +6,13 @@ import Login from "./Pages/Login/Login";
 import RequireAuth from "./Pages/Login/RequireAuth";
 import SignUp from "./Pages/Login/SignUp";
 import Navbar from "./Pages/Shared/Navbar";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashbord from "./Pages/Dashboard/Dashbord";
 import MyAppinment from "./Pages/Dashboard/MyAppinment";
 import MyReview from "./Pages/Dashboard/MyReview";
+import User from "./Pages/Dashboard/Users";
+import Users from "./Pages/Dashboard/Users";
 
 
 
@@ -31,6 +33,7 @@ function App() {
         </RequireAuth>}>
           <Route index element={<MyAppinment></MyAppinment>}></Route>
           <Route path="review" element={<MyReview></MyReview>}></Route>
+         <Route path="users" element={<Users></Users>}></Route>
         </Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
