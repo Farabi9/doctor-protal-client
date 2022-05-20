@@ -24,8 +24,12 @@ const [admin] = useAdmin(user)
       {/* <!-- Sidebar content here --> */}
       <li className='font-mono font-bold bg-primary rounded-md'><Link to='/dashboard'>My Appoinments</Link></li>
       <li  className='font-mono font-bold bg-primary rounded-md mt-5'><Link to='/dashboard/review'>My Reviews</Link></li>
-      {admin && <li  className='font-mono font-bold bg-primary rounded-md mt-5'>
-        <Link to='/dashboard/users'>All Users</Link></li>}
+      {admin && <>
+        <li  className='font-mono font-bold bg-primary rounded-md mt-5'>
+        <Link to='/dashboard/users'>All Users</Link></li>
+        <li  className='font-mono font-bold bg-primary rounded-md mt-5'>
+        <Link to='/dashboard/addDoctor'>Add a Doctor</Link></li>
+      </>}
     </ul>
   
   </div>

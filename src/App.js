@@ -11,9 +11,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import Dashbord from "./Pages/Dashboard/Dashbord";
 import MyAppinment from "./Pages/Dashboard/MyAppinment";
 import MyReview from "./Pages/Dashboard/MyReview";
-import User from "./Pages/Dashboard/Users";
 import Users from "./Pages/Dashboard/Users";
 import RequireAdmin from "./Pages/Login/RequireAdmin";
+import AddDoctor from "./Pages/Dashboard/AddDoctor";
 
 
 
@@ -35,6 +35,7 @@ function App() {
           <Route index element={<MyAppinment></MyAppinment>}></Route>
           <Route path="review" element={<MyReview></MyReview>}></Route>
          <Route path="users" element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
+         <Route path="addDoctor" element={<RequireAdmin><AddDoctor></AddDoctor></RequireAdmin>}></Route>
         </Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
