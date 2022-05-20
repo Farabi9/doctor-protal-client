@@ -13,6 +13,7 @@ import MyAppinment from "./Pages/Dashboard/MyAppinment";
 import MyReview from "./Pages/Dashboard/MyReview";
 import User from "./Pages/Dashboard/Users";
 import Users from "./Pages/Dashboard/Users";
+import RequireAdmin from "./Pages/Login/RequireAdmin";
 
 
 
@@ -33,7 +34,7 @@ function App() {
         </RequireAuth>}>
           <Route index element={<MyAppinment></MyAppinment>}></Route>
           <Route path="review" element={<MyReview></MyReview>}></Route>
-         <Route path="users" element={<Users></Users>}></Route>
+         <Route path="users" element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
         </Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
