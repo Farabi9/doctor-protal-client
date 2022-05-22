@@ -12,7 +12,7 @@ const CheckoutForm = ({ appoinment }) => {
 
 
 
-    const { _id ,price, patient, patientName } = appoinment
+    const { _id, price, patient, patientName } = appoinment;
 
 
 
@@ -42,6 +42,10 @@ const CheckoutForm = ({ appoinment }) => {
             return;
         }
         const card = elements.getElement(CardElement);
+        if (card === null) {
+            return;
+        }
+
         const { error, paymentMethod } = await stripe.createPaymentMethod({
             type: 'card',
             card
@@ -64,7 +68,7 @@ const CheckoutForm = ({ appoinment }) => {
             },
         );
         if (intentError) {
-            setCardError(intentError.message);
+            setCardError(intentError?.message);
             setProcessing(false)
         }
         else {
@@ -72,22 +76,21 @@ const CheckoutForm = ({ appoinment }) => {
             setTransactionId(paymentIntent.id);
             console.log(paymentIntent)
             setSuccess('Congrats your payment is completed');
-              
-            const payment ={
+
+            const payment = {
                 appoinment: _id,
                 transactionId: paymentIntent.id
             }
 
-            fetch(`https://still-chamber-24197.herokuapp.com/booking/${_id}`,{
+            fetch(`https://still-chamber-24197.herokuapp.com/booking/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 },
                 body: JSON.stringify(payment)
-            }).then(res => res.json()).then(data =>{
+            }).then(res => res.json()).then(data => {
                 setProcessing(false)
-           console.log(data)
             })
         }
     }
@@ -117,14 +120,14 @@ const CheckoutForm = ({ appoinment }) => {
             {
                 cardError && <p className='text-red-500'>{cardError}</p>
             }
-            
+
             {
                 success && <div className='text-green-500'><p>{success}</p>
-                <p>
-                    Your transaction ID: <span className="text-orange-500 font-bold">{transactionId}</span>
+                    <p>
+                        Your transaction ID: <span className="text-orange-500 font-bold">{transactionId}</span>
                     </p></div>
             }
-            
+
         </>
     );
 };

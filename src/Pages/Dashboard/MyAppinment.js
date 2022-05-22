@@ -51,7 +51,9 @@ const MyAppinment = () => {
           </thead>
           <tbody>
             {
-              appoinments.map((a, index) => <tr>
+              appoinments.map((a, index) => <tr
+              
+              key={a._id}>
                 <th className='font-mono'>{index + 1}</th>
                 <td className='font-mono'>{a.patientName}</td>
                 <td className='font-mono'>{a.date}</td>
