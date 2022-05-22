@@ -12,10 +12,10 @@ const AvailableAppoinment = ({ date }) => {
     const { data: services, isLoading, refetch } = useQuery(['available', formantedDate], () => fetch(`https://still-chamber-24197.herokuapp.com/available?date=${formantedDate}`)
         .then(res => res.json()))
 
-        if(isLoading){
-            return <Loading></Loading>
-        }
-   
+    if (isLoading) {
+        return <Loading></Loading>
+    }
+
     return (
         <div>
             <h4 className='text-xl text-secondary text-center my-12'>

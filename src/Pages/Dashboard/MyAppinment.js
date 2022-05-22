@@ -60,7 +60,7 @@ const MyAppinment = () => {
                 <td className='font-mono'>
                   {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}
                   {(a.price && a.paid) && <Link to={``}><span className='text-success'>Paid</span></Link>}
-                  </td>
+                </td>
               </tr>)
             }
 
